@@ -41,27 +41,36 @@ class _HomescreenState extends State<Homescreen> {
             )
           ],
         ),
-        bottomNavigationBar: GNav(gap: 20, tabs: [
-          GButton(
-            icon: Icons.bookmark,
-            text: "Library",
-          ),
-          GButton(
-            icon: Icons.new_releases,
-            text: "Library",
-          ),
-          GButton(
-            icon: Icons.update,
-            text: "Library",
-          ),
-          GButton(
-            icon: Icons.abc,
-            text: "Library",
-          ),
-          GButton(
-            icon: Icons.abc,
-            text: "Library",
-          ),
-        ]));
+        bottomNavigationBar: GNav(
+            backgroundColor: const Color.fromARGB(255, 24, 40, 32),
+            tabBackgroundColor: Colors.greenAccent,
+            gap: 10,
+            tabs: [
+              GButton(
+                icon: Icons.bookmark,
+                iconColor: Colors.greenAccent,
+                text: "Library",
+              ),
+              GButton(
+                icon: Icons.new_releases,
+                iconColor: Colors.greenAccent,
+                text: "Updates",
+              ),
+              GButton(
+                icon: Icons.update,
+                iconColor: Colors.greenAccent,
+                text: "History",
+              ),
+              GButton(
+                icon: Icons.explore,
+                iconColor: Colors.greenAccent,
+                text: "Extension",
+              ),
+              GButton(
+                icon: Icons.more_horiz,
+                iconColor: Colors.greenAccent,
+                text: "More",
+              ),
+            ]));
   }
 }
