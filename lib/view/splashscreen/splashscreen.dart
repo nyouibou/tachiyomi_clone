@@ -1,8 +1,8 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:tachiyomi_clone/view/homescreen/homescreen.dart';
+import 'package:tachiyomi_clone/view/homescreen/navpage/navpages.dart';
 
 class Splashscreen extends StatefulWidget {
   const Splashscreen({super.key});
@@ -19,7 +19,7 @@ class _SplashscreenState extends State<Splashscreen>
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
     Future.delayed(Duration(seconds: 2), () {
       Navigator.of(context).pushReplacement(MaterialPageRoute(
-        builder: (_) => Homescreen(),
+        builder: (_) => NavBar(),
       ));
     });
   }
@@ -34,30 +34,24 @@ class _SplashscreenState extends State<Splashscreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       body: Center(
         child: Container(
           width: double.infinity,
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-                colors: [Colors.black, Colors.blue],
-                begin: Alignment.topRight,
-                end: Alignment.bottomLeft),
-          ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(
-                Icons.edit,
-                size: 80,
-                color: Colors.white,
+              Image.asset(
+                "assets/tchlog.png",
+                scale: 1.5,
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 7),
               Text(
                 "Tachiyomi",
                 style: TextStyle(
-                    fontStyle: FontStyle.italic,
+                    fontWeight: FontWeight.bold,
                     color: Colors.white,
-                    fontSize: 20),
+                    fontSize: 15),
               )
             ],
           ),

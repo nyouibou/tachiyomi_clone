@@ -1,3 +1,8 @@
+updates needed 
+*update imagedb
+and need to padd the library
+
+
 # tachiyomi_clone
 
 A new Flutter project.
