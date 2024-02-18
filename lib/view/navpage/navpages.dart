@@ -36,6 +36,7 @@ class _NavBarState extends State<NavBar> {
         backgroundColor: Colors.black,
         selectedItemColor: Colors.green,
         unselectedItemColor: Colors.grey,
+        selectedIconTheme: IconThemeData(color: Colors.green),
         showUnselectedLabels: true,
         currentIndex: selectedindex,
         items: [

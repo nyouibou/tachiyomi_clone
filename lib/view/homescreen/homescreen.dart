@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:tachiyomi_clone/utils/dbdata.dart';
+import 'package:tachiyomi_clone/view/homescreen/widgets/customgridlibrary.dart';
 import 'package:tachiyomi_clone/view/mangadetails/mangadetails.dart';
 
 class Homescreen extends StatefulWidget {
@@ -47,38 +49,36 @@ class _HomescreenState extends State<Homescreen> {
           child: GridView.builder(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 3,
+              crossAxisSpacing: 8,
+              mainAxisSpacing: 8,
             ),
-            itemBuilder: (context, index) => GestureDetector(
-              onTap: () {
-                // Navigate to the detailed page when tapped
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => MangaDetails()),
-                );
-              },
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(15),
-                    child: Container(
-                      height: 160,
-                      width: 108,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        image: DecorationImage(
-                          image: AssetImage("assets/jjk.png"),
-                          fit: BoxFit.cover,
-                        ),
+            itemCount: Dbdata.historyManga.length,
+            shrinkWrap: true,
+            itemBuilder: (context, index) {
+              return GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => MangaDetails(
+                        mangaTitle: Dbdata.mangaData[index]["mangaTitle"]!,
+                        mangaAuthor: Dbdata.mangaData[index]["mangaAuthor"]!,
+                        mangaDes: Dbdata.mangaData[index]["mangaDescription"]!,
+                        imagUrl: Dbdata.mangaData[index]["imageUrl"]!,
+                        chapter: Dbdata.chapterData[index]["chapter"]!,
+                        pages: Dbdata.chapterData[index]["pages"]!,
+
+                        // mangaData: Dbdata.historyManga[index],
                       ),
                     ),
-                  ),
-                  Text(
-                    "Jujutsu Kaisen",
-                    style: TextStyle(color: Colors.white, fontSize: 13),
-                  )
-                ],
-              ),
-            ),
+                  );
+                },
+                child: CustomLibraryGrid(
+                  title: Dbdata.historyManga[index]["title"]!,
+                  imageUrl: Dbdata.historyManga[index]["imageUrl"]!,
+                ),
+              );
+            },
           ),
         ),
       ),

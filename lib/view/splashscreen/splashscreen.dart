@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:tachiyomi_clone/view/homescreen/navpage/navpages.dart';
+import 'package:tachiyomi_clone/view/navpage/navpages.dart';
 
 class Splashscreen extends StatefulWidget {
   const Splashscreen({super.key});

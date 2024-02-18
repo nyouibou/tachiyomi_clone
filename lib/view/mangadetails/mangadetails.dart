@@ -1,33 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:tachiyomi_clone/utils/dbdata.dart';
 
-class MangaDetails extends StatefulWidget {
-  const MangaDetails({super.key});
+class MangaDetails extends StatelessWidget {
+  const MangaDetails({
+    super.key,
+    required this.mangaTitle,
+    required this.mangaAuthor,
+    required this.mangaDes,
+    required this.imagUrl,
+    required this.chapter,
+    required this.pages,
+  });
+  final String mangaTitle;
+  final String imagUrl;
+  final String mangaAuthor;
+  final String mangaDes;
+  final String chapter;
+  final String pages;
 
-  @override
-  State<MangaDetails> createState() => _MangaDetailsState();
-}
-
-class _MangaDetailsState extends State<MangaDetails> {
-  final String mangaTitle = 'Solo Leveling';
-  final String mangaAuthor = 'Chugong';
-  final String mangaDescription =
-      "Ten years ago, 'the Gate' appeared and connected the real world with the realm of magic and monsters. To combat these vile beasts, ordinary people received superhuman powers and became known as 'Hunters.' Twenty-year-old Sung Jin-Woo is one such Hunter, but he is known as the 'World's Weakest,'' owing to his pathetic power compared to even a measly E-Rank. Still, he hunts monsters tirelessly in low-rank Gates to pay for his mother's medical bills.";
-  final List<ChapterItem> chapters = [
-    ChapterItem('Chapter 1', '12 pages'),
-    ChapterItem('Chapter 2', '18 pages'),
-    ChapterItem('Chapter 3', '15 pages'),
-    ChapterItem('Chapter 3', '15 pages'),
-    ChapterItem('Chapter 3', '15 pages'),
-    ChapterItem('Chapter 3', '15 pages'),
-    ChapterItem('Chapter 3', '15 pages'),
-    ChapterItem('Chapter 3', '15 pages'),
-    ChapterItem('Chapter 3', '15 pages'),
-    ChapterItem('Chapter 3', '15 pages'),
-    ChapterItem('Chapter 3', '15 pages'),
-    ChapterItem('Chapter 3', '15 pages'),
-    ChapterItem('Chapter 3', '15 pages'),
-    // Add more chapters as needed
-  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,8 +61,8 @@ class _MangaDetailsState extends State<MangaDetails> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Image.network(
-              'https://via.placeholder.com/300', // Manga cover image URL
+            Image.asset(
+              imagUrl,
               height: 200.0,
               fit: BoxFit.cover,
             ),
@@ -95,7 +85,7 @@ class _MangaDetailsState extends State<MangaDetails> {
                   ),
                   SizedBox(height: 16.0),
                   Text(
-                    mangaDescription,
+                    mangaDes,
                     style: TextStyle(fontSize: 16.0, color: Colors.white),
                   ),
                   SizedBox(height: 16.0),
@@ -107,7 +97,24 @@ class _MangaDetailsState extends State<MangaDetails> {
                         color: const Color.fromARGB(255, 164, 163, 163)),
                   ),
                   SizedBox(height: 8.0),
-                  _buildChapterList(),
+                  ListView.builder(
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                    itemCount: Dbdata.chapterData.length,
+                    itemBuilder: (context, index) {
+                      return ListTile(
+                        title: Text(chapter,
+                            style: TextStyle(color: Colors.white)),
+                        subtitle: Text(
+                          pages,
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        onTap: () {
+                          // Add navigation or action when a chapter is tapped
+                        },
+                      );
+                    },
+                  ),
                 ],
               ),
             ),
@@ -123,34 +130,4 @@ class _MangaDetailsState extends State<MangaDetails> {
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
-
-  Widget _buildChapterList() {
-    return ListView.builder(
-      shrinkWrap: true,
-      physics: NeverScrollableScrollPhysics(),
-      itemCount: chapters.length,
-      itemBuilder: (context, index) {
-        return ListTile(
-          title: Text(
-            chapters[index].title,
-            selectionColor: Colors.white,
-          ),
-          subtitle: Text(
-            chapters[index].pages,
-            selectionColor: Colors.white,
-          ),
-          onTap: () {
-            print('Chapter ${chapters[index].title} tapped');
-          },
-        );
-      },
-    );
-  }
-}
-
-class ChapterItem {
-  final String title;
-  final String pages;
-
-  ChapterItem(this.title, this.pages);
 }

@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:tachiyomi_clone/utils/dbdata.dart';
+import 'package:tachiyomi_clone/view/historyscreen/widgets/omhistory.dart';
 
 class Historyscreen extends StatefulWidget {
   const Historyscreen({super.key});
@@ -10,41 +12,6 @@ class Historyscreen extends StatefulWidget {
 }
 
 class _HistoryscreenState extends State<Historyscreen> {
-  final List<String> historyItems = [
-    "Chronicles of Celestial Echo",
-    "Whispers of the Forgotten Realm",
-    "Ephemeral Serenade",
-    "Requiem for the Crimson Moon",
-    "Labyrinth of Luminous Shadows",
-    "Stardust Symphony",
-    "Sorcerer's Embrace",
-    "Moonlit Mirage",
-    "Silent Blossoms of the Eternal Sakura",
-    "Crimson Sky Chronicles",
-    "Eternal Alchemy",
-    "Whirlwind of Whispering Sands",
-    "Oracle's Veil",
-    "Celestial Melody",
-    "Shadows of the Enchanted Lantern"
-  ];
-  final List<String> chaptorItems = [
-    'Chapter 114',
-    'Chapter 50',
-    'Chapter 29',
-    'Chapter 29',
-    'Chapter 29',
-    'Chapter 29',
-    'Chapter 29',
-    'Chapter 29',
-    'Chapter 29',
-    'Chapter 29',
-    'Chapter 29',
-    'Chapter 29',
-    'Chapter 29',
-    'Chapter 29',
-    'Chapter 29',
-    'Chapter 29',
-  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,53 +40,13 @@ class _HistoryscreenState extends State<Historyscreen> {
         ],
       ),
       body: ListView.builder(
-        itemCount: historyItems.length,
-        itemBuilder: (context, index) {
-          if (index == 0) {
-            return Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Container(
-                  padding: EdgeInsets.all(10.0),
-                  color: Colors.black,
-                  child: Text(
-                    '  Today',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 15.0,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                _buildHistoryItem(index),
-              ],
-            );
-          } else {
-            return _buildHistoryItem(index);
-          }
-        },
+        itemCount: Dbdata.historyManga.length,
+        itemBuilder: (context, index) => CustomHistory(
+          titles: Dbdata.historyManga[index]["title"]!,
+          imageUrls: Dbdata.historyManga[index]["imageUrl"]!,
+          language: Dbdata.historyManga[index]["Time"]!,
+        ),
       ),
-    );
-  }
-
-  Widget _buildHistoryItem(int index) {
-    return ListTile(
-      title: Text(
-        historyItems[index],
-        style: TextStyle(color: Colors.white),
-      ),
-      subtitle: Text(
-        chaptorItems[index],
-        style: TextStyle(color: Colors.white),
-      ),
-      leading: Image.network(
-        'https://via.placeholder.com/50',
-        width: 50,
-        height: 50,
-        fit: BoxFit.cover,
-      ),
-      trailing: Icon(Icons.delete),
-      onTap: () {},
     );
   }
 }

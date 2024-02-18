@@ -59,9 +59,7 @@ class _UpdatesscreenState extends State<Updatesscreen> {
         '${mangaUpdate.chapter} • ${mangaUpdate.timeAgo}',
         style: TextStyle(color: Colors.grey),
       ),
-      onTap: () {
-        // Add your onTap logic to navigate to the manga details or reader page
-      },
+      onTap: () {},
     );
   }
 }
