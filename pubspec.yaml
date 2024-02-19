@@ -64,6 +64,7 @@ flutter:
     - assets/tchlogo.png
     - assets/tchlog.png
     - assets/images/
+    - assets/iconsdump/
 
   #   - images/a_dot_ham.jpeg
 

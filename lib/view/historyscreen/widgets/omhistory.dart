@@ -7,7 +7,8 @@ class CustomHistory extends StatelessWidget {
       {super.key,
       required this.titles,
       required this.imageUrls,
-      required this.language});
+      required this.language,
+      required String title});
   final String titles;
   final String language;
   final String imageUrls;
@@ -32,8 +33,7 @@ class CustomHistory extends StatelessWidget {
               children: [
                 Text(
                   titles,
-                  style: TextStyle(
-                      color: Colors.white, fontWeight: FontWeight.bold),
+                  style: TextStyle(color: Colors.white, fontSize: 12),
                   textAlign: TextAlign.start,
                 ),
                 Text(language,

@@ -16,7 +16,7 @@ class Dbdata {
       "imageUrl": "assets/images/existence.jpg",
     },
     {
-      "title": "I was more overpowered than the hero, so I hid my power!",
+      "title": "I was more overpowered than the hero....",
       "Time": "5 hours ago",
       "imageUrl":
           "assets/images/I was more overpowered than the hero, so I hid my power!.jpg",
@@ -61,53 +61,52 @@ class Dbdata {
     {
       "title": "Mangadex",
       "language": "English",
-      "imageUrl":
-          "https://i.pinimg.com/474x/d7/c4/61/d7c4618bcb81b204dd0184a50d8a17be.jpg",
+      "imageUrl": "assets/iconsdump/mangadex-logo.png",
     },
     {
-      "title": "AnimeHub",
+      "title": "MangaSee",
+      "language": "English",
+      "imageUrl": "assets/iconsdump//mangasee.jpg",
+    },
+    {
+      "title": "MangaFox",
+      "language": "English",
+      "imageUrl": "assets/iconsdump/mangafox.jpg",
+    },
+    {
+      "title": "Comics",
+      "language": "English",
+      "imageUrl": "assets/iconsdump/comic.png",
+    },
+    {
+      "title": "Bato.to",
+      "language": "English",
+      "imageUrl": "assets/iconsdump/bato.jpg",
+    },
+    {
+      "title": "KissManga",
+      "language": "English",
+      "imageUrl": "assets/iconsdump/kissmanga.png",
+    },
+    {
+      "title": "MangaStream",
+      "language": "English",
+      "imageUrl": "assets/iconsdump/mangastream.jpg",
+    },
+    {
+      "title": "MangaFreak",
+      "language": "English",
+      "imageUrl": "assets/iconsdump/mangafreak.jpg",
+    },
+    {
+      "title": "ReadComics",
+      "language": "English",
+      "imageUrl": "assets/iconsdump/readcomics.jpg",
+    },
+    {
+      "title": "Webtoon",
       "language": "Japanese",
-      "imageUrl": "https://example.com/animehub.jpg",
-    },
-    {
-      "title": "Webtoon Viewer",
-      "language": "Korean",
-      "imageUrl": "https://example.com/webtoon_viewer.jpg",
-    },
-    {
-      "title": "ComicReader",
-      "language": "Spanish",
-      "imageUrl": "https://example.com/comicreader.jpg",
-    },
-    {
-      "title": "MangaReader",
-      "language": "Portuguese",
-      "imageUrl": "https://example.com/mangareader.jpg",
-    },
-    {
-      "title": "MangaSync",
-      "language": "French",
-      "imageUrl": "https://example.com/mangasync.jpg",
-    },
-    {
-      "title": "ManhwaMaster",
-      "language": "Korean",
-      "imageUrl": "https://example.com/manhwamaster.jpg",
-    },
-    {
-      "title": "ComicExplorer",
-      "language": "German",
-      "imageUrl": "https://example.com/comicexplorer.jpg",
-    },
-    {
-      "title": "MangaGalaxy",
-      "language": "Italian",
-      "imageUrl": "https://example.com/mangagalaxy.jpg",
-    },
-    {
-      "title": "ComicFiesta",
-      "language": "Malay",
-      "imageUrl": "https://example.com/comicfiesta.jpg",
+      "imageUrl": "assets/iconsdump/webtoon.png",
     },
   ];
   static List<Map<String, String>> mangaData = [
@@ -270,6 +269,64 @@ class Dbdata {
     {
       "chapter": "Chapter 20",
       "pages": "23",
+    },
+  ];
+  static List<Map<String, String>> updatesData = [
+    {
+      "title": "Bleach",
+      "Time": "2 hours ago",
+      "imageUrl": "assets/images/Bleach.jpg",
+    },
+    {
+      "title": "Eleceed",
+      "Time": "3 hours ago",
+      "imageUrl": "assets/images/eleceed.jpg",
+    },
+    {
+      "title": "Existence",
+      "Time": "4 hours ago",
+      "imageUrl": "assets/images/existence.jpg",
+    },
+    {
+      "title": "I was more overpowered than the hero..",
+      "Time": "5 hours ago",
+      "imageUrl":
+          "assets/images/I was more overpowered than the hero, so I hid my power!.jpg",
+    },
+    {
+      "title": "Jujutsu Kaisen",
+      "Time": "6 hours ago",
+      "imageUrl": "assets/images/jjk.png",
+    },
+    {
+      "title": "Lookism",
+      "Time": "7 hours ago",
+      "imageUrl": "assets/images/lookism.jpg",
+    },
+    {
+      "title": "One Piece",
+      "Time": "8 hours ago",
+      "imageUrl": "assets/images/one piece.jpg",
+    },
+    {
+      "title": "Player Who Can’t Level Up",
+      "Time": "9 hours ago",
+      "imageUrl": "assets/images/Player Who Can’t Level Up.jpg",
+    },
+    {
+      "title": "Return of the Disaster-Class Hero",
+      "Time": "10 hours ago",
+      "imageUrl": "assets/images/Return of the Disaster-Class Hero.jpg",
+    },
+    {
+      "title": "Solo Leveling",
+      "Time": "11 hours ago",
+      "imageUrl": "assets/images/Solo Leveling.jpg",
+    },
+    {
+      "title": "Solo Max-Level Newbie",
+      "Time": "12 hours ago",
+      "imageUrl": "assets/images/Solo Max-Level Newbie.jpg",
     },
   ];
 }

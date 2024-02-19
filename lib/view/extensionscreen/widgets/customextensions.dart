@@ -20,7 +20,7 @@ class CustomExtensions extends StatelessWidget {
           children: [
             Container(
               height: 76,
-              width: 146,
+              width: 100,
               child: Image.network(
                 imageUrls,
                 fit: BoxFit.cover,

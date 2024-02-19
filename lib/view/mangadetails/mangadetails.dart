@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
 import 'package:tachiyomi_clone/utils/dbdata.dart';
 
@@ -102,15 +104,19 @@ class MangaDetails extends StatelessWidget {
                     physics: NeverScrollableScrollPhysics(),
                     itemCount: Dbdata.chapterData.length,
                     itemBuilder: (context, index) {
+                      String currentChapter =
+                          Dbdata.chapterData[index]["chapter"]!;
+                      String totalPages = Dbdata.chapterData[index]["pages"]!;
+
                       return ListTile(
-                        title: Text(chapter,
+                        title: Text(currentChapter,
                             style: TextStyle(color: Colors.white)),
                         subtitle: Text(
-                          pages,
+                          'Pages: $totalPages',
                           style: TextStyle(color: Colors.white),
                         ),
                         onTap: () {
-                          // Add navigation or action when a chapter is tapped
+                          Navigator.pop(context);
                         },
                       );
                     },

@@ -48,10 +48,10 @@ class _HomescreenState extends State<Homescreen> {
         child: Container(
           child: GridView.builder(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 3,
-              crossAxisSpacing: 8,
-              mainAxisSpacing: 8,
-            ),
+                crossAxisCount: 3,
+                crossAxisSpacing: 8,
+                mainAxisSpacing: 8,
+                childAspectRatio: 0.65),
             itemCount: Dbdata.historyManga.length,
             shrinkWrap: true,
             itemBuilder: (context, index) {
@@ -67,8 +67,6 @@ class _HomescreenState extends State<Homescreen> {
                         imagUrl: Dbdata.mangaData[index]["imageUrl"]!,
                         chapter: Dbdata.chapterData[index]["chapter"]!,
                         pages: Dbdata.chapterData[index]["pages"]!,
-
-                        // mangaData: Dbdata.historyManga[index],
                       ),
                     ),
                   );
